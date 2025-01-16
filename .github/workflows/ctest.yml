@@ -17,10 +17,10 @@ jobs:
 
     # Step 2: Set up the C++ compiler environment
     - name: Setup C++ environment
-      uses: actions/setup-cpp@v1
-      with:
-        compiler: gcc         # Specify the compiler to use (GCC)
-        version: 11           # Use GCC version 11 for building the project
+      run: |
+        sudo apt update
+        sudo apt install -y g++11
+        g++ --version
 
     # Step 3: Configure and build the project
     - name: Configure and Build
