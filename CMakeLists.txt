@@ -18,7 +18,7 @@ set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
 set(TEST_DIR "${CMAKE_SOURCE_DIR}/tests")
 
-include_directories(${INCLUDE_DIR})
+include_directories(${INCLUDE_DIR} ${TEST_DIR})
 
 # Add library
 add_library(ds_library STATIC
@@ -26,16 +26,19 @@ add_library(ds_library STATIC
     ${SRC_DIR}/linkedlist.cpp
 )
 
-# Add test executables
-add_executable(test_array
-    ${TEST_DIR}/test_array.cpp
-)
-target_link_libraries(test_array ds_library)
+# Enable testing
+enable_testing()
 
-add_executable(test_linkedlist
-    ${TEST_DIR}/test_linkedlist.cpp
-)
-target_link_libraries(test_linkedlist ds_library)
+# Macro for defining test executables
+macro(add_doctest_test test_name source_file)
+    add_executable(${test_name} ${source_file})
+    target_link_libraries(${test_name} ds_library)
+    add_test(NAME ${test_name} COMMAND ${test_name})
+endmacro()
+
+# Add test executables using the macro
+add_doctest_test(test_array ${TEST_DIR}/test_array.cpp)
+add_doctest_test(test_linkedlist ${TEST_DIR}/test_linkedlist.cpp)
 
 # Output the build type for verification
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
