@@ -72,7 +72,7 @@ class AbstractDataStructure {
         virtual void traverse(std::function<void(const int&)>) const = 0;
 
     private:
-        int size;
+        int size; ///< Size of the structure.
 }
 
 #endif // ABSTRACT_DATASTRUCTURE_H
