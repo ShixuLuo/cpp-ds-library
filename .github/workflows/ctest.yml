@@ -2,9 +2,12 @@ name: CMake CI
 
 # Trigger workflow when merging into the main branch
 on:
-  pull_request:
+  push:
     branches:
       - feature/ci-test  # Trigger only when merging a pull request into the main branch
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build-and-test:
