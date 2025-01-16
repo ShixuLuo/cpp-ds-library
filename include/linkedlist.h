@@ -42,28 +42,28 @@ class LinkedList {
         ~LinkedList();
 
         /**
-         * @brief Insert a value at the head position.
+         * @brief Push a value at the head position.
          * @param value The value to insert at head.
          */
-        void insertHead(int value);
+        void push_front(int value);
 
         /**
-         * @brief Insert a value at the tail position.
+         * @brief Push a value at the tail position.
          * @param value The value to insert at tail.
          */
-        void insertTail(int value);
+        void push_back(int value);
 
         /**
-         * @brief Delete the node at head.
+         * @brief Pop the node at head.
          * @return The value at head.
          * @exception std::runtime_error If the linked list is empty.
          */
-        int deleteHead();
+        int pop_front();
 
         /**
          * @brief Traverse the whole linked node and print out.
          */
-        void traverse() const;
+        void dump() const;
 
     private:
         LinkNode* head; ///< Pointer to the head node.

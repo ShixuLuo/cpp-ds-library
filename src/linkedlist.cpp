@@ -19,13 +19,13 @@ LinkedList::~LinkedList() {
     head = nullptr;
 }
 
-void LinkedList::insertHead(int value) {
+void LinkedList::push_front(int value) {
     LinkNode* temp = head;
     head = new LinkNode(value);
     head->next = temp;
 }
 
-int LinkedList::deleteHead() {
+int LinkedList::pop_front() {
     if (head == nullptr) {
         throw std::runtime_error("Attempt to delete an element from "
                                  "an empty linked list");
@@ -35,7 +35,7 @@ int LinkedList::deleteHead() {
     return value;
 }
 
-void LinkedList::insertTail(int value) {
+void LinkedList::push_back(int value) {
     if (head == nullptr) {
         head = new LinkNode(value);
     } else {
@@ -47,7 +47,7 @@ void LinkedList::insertTail(int value) {
     }
 }
 
-void LinkedList::traverse() const {
+void LinkedList::dump() const {
     LinkNode* current = head;
     while (current != nullptr) {
         std::cout << current->value << " -> ";

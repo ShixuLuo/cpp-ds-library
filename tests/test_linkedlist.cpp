@@ -14,42 +14,42 @@ int main() {
     // Expect: LinkedList creates
     LinkedList llist;
 
-    // Test insertHead()
+    // Test push_front()
     // Input: 42
     // Expect: head = (42, nullptr)
-    llist.insertHead(42);
+    llist.push_front(42);
 
-    // Test deleteHead()
+    // Test pop_front()
     // Expect: llist is empty, return 42
-    assert(llist.deleteHead() == 42);
+    assert(llist.pop_front() == 42);
 
-    // Test deleteHead()
+    // Test pop_front()
     try {
-        llist.deleteHead();
+        llist.pop_front();
     } catch (const std::runtime_error& e) {
         std::cout << "Caught excepted exception: " << e.what() << std::endl;
     }
 
-    // Test traverse()
+    // Test dump()
     // Except: nullptr
-    llist.traverse();
+    llist.dump();
 
-    // Test insertTail()
+    // Test push_back()
     // Case 1: Insert into an empty list
     // Input: 42
     // Expected: Head is a new node with value 42
-    llist.insertTail(42);
+    llist.push_back(42);
     // Case 2: Insert into a nonempty list
     // Input 43
     // Expected: Tail is a new node with value 43
-    llist.insertTail(43);
-    llist.insertTail(44);
-    llist.insertTail(45);
-    llist.insertTail(46);
+    llist.push_back(43);
+    llist.push_back(44);
+    llist.push_back(45);
+    llist.push_back(46);
 
-    // test traverse()
+    // test dump()
     // Expect: 42 -> 43 -> 44 -> 45 -> 46 -> nullptr
-    llist.traverse();
+    llist.dump();
 
     std::cout << "All tests passed!" << std::endl;
 }
