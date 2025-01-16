@@ -6,7 +6,7 @@ A comprehensive implementation of common data structures in C++ from scratch for
   - [ ] `insert`
   - [ ] `remove`
   - [ ] `find`
-  - [ ] `size`
+  - [ ] `getSize`
   - [ ] `isEmpty`
   - [ ] `clear`
   - [ ] `traverse`
