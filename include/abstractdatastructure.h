@@ -61,7 +61,8 @@ class AbstractDataStructure {
         virtual bool isEmpty() const = 0;
 
         /**
-         * @brief Clean the data structure to empty.  */
+         * @brief Clean the data structure to empty.  
+         */
         virtual void clear() = 0;
 
         /**
@@ -69,10 +70,7 @@ class AbstractDataStructure {
          *
          * @param func The function to apply.
          */
-        virtual void traverse(std::function<void(const int&)>) const = 0;
-
-    private:
-        int size; ///< Size of the structure.
-}
+        virtual void traverse(std::function<void(const int&)> func) const = 0;
+};
 
 #endif // ABSTRACT_DATASTRUCTURE_H
