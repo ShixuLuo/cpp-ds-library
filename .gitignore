@@ -48,3 +48,6 @@ build/
 
 # Vim
 *.swp
+
+# macOS
+.DS_Store
