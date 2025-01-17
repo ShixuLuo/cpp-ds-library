@@ -39,14 +39,15 @@ void LinkedList::ensureInRange(int index) const {
 }
 
 LinkNode* LinkedList::getNode(int index) const {
+    // Operation % in C++ is not the same as (mod n).
+    // It might return a negative value if the input is negative.
+    // The implement of a (mod n) is as follow:
+    // (a % n + n) % n;
+    // This will ensure the result is positive.
+    index = (index % size + size) % size;
     LinkNode* current = head;
-    int i = 0;
-    while (i != index) {
-        if (current->next == nullptr) {
-            return current;
-        }
+    for (int i = 0; i<index; ++i) {
         current = current->next;
-        ++i;
     }
     return current;
 }
@@ -136,9 +137,35 @@ void LinkedList::push_back(int value) {
     size = size + 1;
 }
 
+/**
+ * @test
+ * CASE 1: normal;
+ * SET 5->4->3->2->1;
+ * INPUT: pop_back();
+ * EXPECT: 5->4->3->2;
+ * EXPECT: size==4;
+ *
+ * CASE 2: size == 1;
+ * SET 1;
+ * INPUT: pop_back();
+ * EXPECT: nullptr;
+ * EXPECT: size==0;
+ */
 int LinkedList::pop_back() {
-    throw std::runtime_error("Function not implemented");
-    return -1;
+    if (isEmpty()) {
+        throw std::runtime_error("Attempt to delete an element from "
+                            "an empty linked list");
+    }
+    if (size == 1) {
+        return pop_front();
+    }
+    LinkNode* before_tail = getNode(-2);
+    LinkNode* tail = before_tail->next;
+    int value = tail->value;
+    before_tail->next = nullptr;
+    delete tail;
+    size -= 1;
+    return value;
 }
 
 void LinkedList::insert(int index, int value) {

@@ -57,3 +57,21 @@ TEST_CASE("Testing push_back()") {
     CHECK(llist.get(5) == 42);
     CHECK(llist.getSize() == 6);
 }
+
+// TEST pop_back
+TEST_CASE("Testing pop_back()") {
+    SUBCASE("normal") {
+        LinkedList llist = createTestList();
+        CHECK(llist.pop_back() == 1);
+        CHECK(llist.getSize() == 4);
+    }
+    
+    SUBCASE("size == 1") {
+        LinkedList llist;
+        llist.push_back(1);
+        CHECK(llist.pop_back() == 1);
+        CHECK(llist.getSize() == 0);
+        CHECK(llist.isEmpty());
+    }
+}
+
