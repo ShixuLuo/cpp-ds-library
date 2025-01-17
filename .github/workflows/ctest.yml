@@ -22,7 +22,7 @@ jobs:
     - name: Setup C++ environment
       run: |
         sudo apt update
-        sudo apt install -y g++11
+        sudo apt install -y gcc
         g++ --version
 
     # Step 3: Configure and build the project
