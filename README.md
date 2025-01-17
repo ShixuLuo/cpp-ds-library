@@ -2,45 +2,30 @@
 
 ## Description
 A comprehensive implementation of common data structures in C++ from scratch for self-learning, including:
-- Arrays
+- AbstractDataStrcuture
+  - [ ] `insert`
+  - [ ] `remove`
+  - [ ] `find`
+  - [ ] `getSize`
+  - [ ] `isEmpty`
+  - [ ] `clear`
+  - [ ] `traverse`
+- Arrays (ADS)
   - [x] `set`
   - [x] `get`
-  - [x] `getSize`
-  - [ ] `insert`
-  - [ ] `delete`
-  - [ ] `dump`
-  - [ ] `search`
-  - [ ] `operation[]`
-  - [ ] `sort`
-  - [ ] `clear`
 - Linked lists
   - [ ] `set`
   - [ ] `get`
-  - [ ] `getSize`
-  - [ ] `insert`
   - [x] `push_front`
   - [x] `push_back`
-  - [ ] `delete`
   - [x] `pop_front`
   - [ ] `pop_back`
-  - [x] `dump`
-  - [ ] `search`
-  - [ ] `operation[]`
-  - [ ] `clear`
 - Lists
   - [ ] `set`
   - [ ] `get`
-  - [ ] `getSize`
   - [ ] `getCapacity`
-  - [ ] `insert`
-  - [ ] `delete`
-  - [ ] `dump`
-  - [ ] `search`
-  - [ ] `operation[]`
   - [ ] `extend`
   - [ ] `toVector`
-  - [ ] `sort`
-  - [ ] `clear`
 - Stacks
 - Queues
 - Hash tables

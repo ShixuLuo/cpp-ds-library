@@ -31,7 +31,9 @@ int LinkedList::pop_front() {
                                  "an empty linked list");
     }
     int value = head->value;
+    LinkNode* oldHead = head;
     head = head->next;
+    delete oldHead;
     return value;
 }
 
