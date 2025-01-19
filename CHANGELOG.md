@@ -4,7 +4,8 @@
 
 ### Added
 - Introduce new methods for linked list, including `set`, `get`, `getSize`,
-`isEmpty`, `pop_back`.
+`isEmpty`, `pop_back`, `insert`, `remove`, `find`, `clear`, `traverse`. Basic
+methods for linked lists are complete.
 
 ### Changed
 - Refactor and rename methods for linked list, including `pop_front`, 
