@@ -1,6 +1,6 @@
 # Changelog
 
-## [unreleased]
+## [0.4.0] - 2025-01-19
 
 ### Added
 - Introduce new methods for linked list, including `set`, `get`, `getSize`,
