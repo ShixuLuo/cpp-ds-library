@@ -21,10 +21,10 @@ A comprehensive implementation of common data structures in C++ from scratch for
   - [x] `pop_front`
   - [x] `pop_back`
 - Lists
-  - [ ] `set`
-  - [ ] `get`
-  - [ ] `getCapacity`
-  - [ ] `extend`
+  - [x] `set`
+  - [x] `get`
+  - [x] `getCapacity`
+  - [x] `extend`
   - [ ] `toVector`
 - Stacks
 - Queues

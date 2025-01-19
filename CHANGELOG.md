@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.0] - 2025-01-19
+
+### Added
+- Introduce class `list` and methods `set`, `get`, `getCapacity`, `extend`,
+and default ADS methods.
+
 ## [0.4.0] - 2025-01-19
 
 ### Added
