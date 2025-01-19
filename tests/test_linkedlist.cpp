@@ -1,6 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include <stdexcept>
+#include <string>
 
 #include "linkedlist.h"
 
@@ -75,3 +76,90 @@ TEST_CASE("Testing pop_back()") {
     }
 }
 
+// TEST insert
+TEST_CASE("Testing insert()") {
+    SUBCASE("normal") {
+        LinkedList llist = createTestList();
+        llist.insert(2, 42);
+        CHECK(llist.get(2) == 42);
+        CHECK(llist.get(3) == 3);
+        CHECK(llist.getSize() == 6);
+    }
+
+    SUBCASE("head") {
+        LinkedList llist = createTestList();
+        llist.insert(0, 42);
+        CHECK(llist.get(0) == 42);
+        CHECK(llist.get(1) == 5);
+        CHECK(llist.getSize() == 6);
+    }
+}
+
+// TEST remove
+TEST_CASE("Testing remove()") {
+    SUBCASE("normal") {
+        LinkedList llist = createTestList();
+        llist.remove(2);
+        CHECK(llist.get(2) == 2);
+        CHECK(llist.getSize() == 4);
+    }
+    SUBCASE("head") {
+        LinkedList llist = createTestList();
+        llist.remove(0);
+        CHECK(llist.get(0) == 4);
+        CHECK(llist.getSize() == 4);
+    }
+}
+
+// TEST find
+TEST_CASE("Testing find()") {
+    SUBCASE("Normally found") {
+        LinkedList llist = createTestList();
+        CHECK(llist.find(4) == 1);
+    }
+    SUBCASE("Normally not found") {
+        LinkedList llist = createTestList();
+        CHECK(llist.find(42) == -1);
+    }
+    SUBCASE("Not found in empty") {
+        LinkedList llist;
+        CHECK(llist.find(42) == -1);
+    }
+}
+
+// TEST clear
+TEST_CASE("Testing clear()") {
+    SUBCASE("Normal clear") {
+        LinkedList llist = createTestList();
+        llist.clear();
+        CHECK("llist.isEmpty() == true");
+    }
+    SUBCASE("Clear empty") {
+        LinkedList llist;
+        llist.clear();
+        CHECK("llist.isEmpty() == true");
+    }
+}
+
+// TEST traverse
+TEST_CASE("Testing traverse()") {
+    SUBCASE("sum") {
+        LinkedList llist = createTestList();
+        int sum = 0;
+        llist.traverse([&sum](int i) {
+                sum = sum + i;
+                });
+        CHECK(sum == 15);
+    }
+    SUBCASE("print") {
+        LinkedList llist = createTestList();
+        std::string dump = "";
+        std::string expect = "5->4->3->2->1->nullptr";
+        llist.traverse([&dump](int i) {
+                std::string i_s = std::to_string(i);
+                dump = dump + i_s + "->";
+                });
+        dump += "nullptr";
+        CHECK(dump == expect);
+    }
+}

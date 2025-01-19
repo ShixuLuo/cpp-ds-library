@@ -168,17 +168,91 @@ int LinkedList::pop_back() {
     return value;
 }
 
+/**
+ * @test
+ * @subcase normal
+ * SET 5->4->3->2->1;
+ * INPUT insert(2, 42);
+ * EXPECT 5->4->42->3->2->1;
+ * EXPECT size == 6;
+ * 
+ * @subcase head
+ * SET 5->4->3->2->1;
+ * INPUT insert(0, 42);
+ * EXPECT 42->5->4->3->2->1;
+ * EXPECT size == 6;
+ */
 void LinkedList::insert(int index, int value) {
-    throw std::runtime_error("Function not implemented");
+    ensureInRange(index);
+
+    if (index == 0) {
+        push_front(value);
+    } else {
+        LinkNode* node = getNode(index-1);
+        LinkNode* temp = node->next;
+        node->next = new LinkNode(value);
+        node->next->next = temp;
+        size += 1;
+    }
 }
 
+/**
+ * @test
+ * @subcase normal
+ * SET 5-4-3-2-1;
+ * INPUT remove(2);
+ * EXPECT 5-4-2-1;
+ * EXPECT size == 4;
+ *
+ * @subcase head
+ * SET 5-4-3-2-1;
+ * INPUT remove(0);
+ * EXPECT 4-3-2-1;
+ * EXPECT size == 4;
+ */
 void LinkedList::remove(int index) {
-    throw std::runtime_error("Function not implemented");
+    ensureInRange(index);
+
+    if (index == 0) {
+        pop_front();
+    } else {
+        LinkNode* node = getNode(index-1);
+        LinkNode* temp = node->next;
+        node->next = temp->next;
+        delete temp;
+        size -= 1;
+    }
 }
 
+/**
+ * @test
+ * @subcase normally found
+ * SET 5-4-3-2-1;
+ * Input find(4);
+ * Expect 1;
+ *
+ * @subcase not found
+ * SET 5-4-3-2-1;
+ * Input find(42);
+ * Expect -1;
+ *
+ * @subcase not found in empty
+ * SET 0;
+ * INPUT find(5);
+ * Expect -1;
+ */
 int LinkedList::find(int value) const {
-    throw std::runtime_error("Function not implemented");
-    return -1;
+   LinkNode* node = head;
+   int index = 0;
+   while (node != nullptr) {
+       if (node->value == value) {
+           return index;
+       } else {
+           node = node->next;
+           index += 1;
+       }
+   }
+   return -1;
 }
 
 /**
@@ -192,18 +266,56 @@ int LinkedList::getSize() const {
  * @notest
  */
 bool LinkedList::isEmpty() const {
-    if (head == nullptr) {
+    if (head == nullptr && size == 0) {
         return true;
     } else {
         return false;
     }
 }
 
+/**
+ * @test
+ * @subcase normal clear;
+ * SET 5-4-3-2-1;
+ * INPUT clear();
+ * EXPECT isEmpty() == true;
+ * EXPECT size == 0;
+ *
+ * @subcase empty clear;
+ * SET 0
+ * INPUT clear()
+ * EXPECT isEmpty() == true;
+ * EXPECT size == 0;
+ */
 void LinkedList::clear() {
-    throw std::runtime_error("Function not implemented");
+    LinkNode* current = head;
+    LinkNode* temp = current;
+    while (current != nullptr) {
+        temp = current;
+        current = current->next;
+        delete temp;
+    }
+    head = nullptr;
+    size = 0;
 }
 
+/**
+ * @test
+ * @subcase sum
+ * SET 5-4-3-2-1;
+ * INPUT traverse(sum());
+ * EXPECT 15;
+ *
+ * @subcase print
+ * SET 5-4-3-2-1;
+ * INPUT traverse(print());
+ * EXPECT '5->4->3->2->1->nullptr'
+ */
 void LinkedList::traverse(std::function<void(const int&)> func) const {
-    throw std::runtime_error("Function not implemented");
+    LinkNode* current = head;
+    for (int i = 0; i < size; ++i) {
+        func(current->value);
+        current = current->next;
+    }
 }
 
