@@ -14,12 +14,12 @@ A comprehensive implementation of common data structures in C++ from scratch for
   - [x] `set`
   - [x] `get`
 - Linked lists
-  - [ ] `set`
-  - [ ] `get`
+  - [x] `set`
+  - [x] `get`
   - [x] `push_front`
   - [x] `push_back`
   - [x] `pop_front`
-  - [ ] `pop_back`
+  - [x] `pop_back`
 - Lists
   - [ ] `set`
   - [ ] `get`
