@@ -1,5 +1,15 @@
 # Changelog
 
+## [unreleased]
+
+### Added
+- Introduce new methods for linked list, including `set`, `get`, `getSize`,
+`isEmpty`, `pop_back`.
+
+### Changed
+- Refactor and rename methods for linked list, including `pop_front`, 
+`push_front`, `push_back`.
+
 ## [0.3.0] - 2025-01-16
 ### Added
 - Class `AbstractDataStructure`.
