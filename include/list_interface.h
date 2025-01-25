@@ -33,6 +33,8 @@ class ListInterface {
          */
         class iterator {
             public:
+                virtual ~iterator() = default;
+
                 /**
                  * @brief Defines operation *.
                  * @return The reference of value at list[i].
