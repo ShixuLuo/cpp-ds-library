@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.6.0] - 2025-01-25
+
+### Added
+- Introduce the `ListInterface`, which defines the unified API for all
+`AbstractList` implementations. It includes common methods `insert`, `remove`, 
+`find`, `getSize`, `isEmpty`, and`clear`. This interface also supports element
+access and modification using the `[]` operator.
+
+### Changed
+- Combine the `Array` and `List` functionalities to `ArrayList`, 
+which now serves as the replacement for the previous `List` class.
+- Reimplement `LinkedList`. Some previously supported methods
+are no longer available.
+
+### Removed
+- Removed the standalone `array` class.
+
 ## [0.5.0] - 2025-01-19
 
 ### Added
