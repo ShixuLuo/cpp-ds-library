@@ -44,6 +44,7 @@ endmacro()
 add_doctest_test(test_array_list ${TEST_DIR}/list/test_array_list.cpp)
 add_doctest_test(test_linked_list ${TEST_DIR}/list/test_linked_list.cpp)
 
+
 # Output the build type for verification
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Compiler flags (Debug): ${CMAKE_CXX_FLAGS_DEBUG}")
