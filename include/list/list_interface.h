@@ -27,50 +27,51 @@ class ListInterface {
          */
         virtual const int& operator[](int index) const = 0;
 
-        /**
-         * @class iterator
-         * @brief Defines an iterator for lists.
-         */
-        class iterator {
-            public:
-                virtual ~iterator() = default;
-
-                /**
-                 * @brief Defines operation *.
-                 * @return The reference of value at list[i].
-                 */
-                virtual int& operator*() = 0;
-
-                /**
-                 * @brief Defines ++i.
-                 */
-                virtual iterator& operator++() = 0;
-
-                /**
-                 * @brief Defines i++.
-                 */
-                virtual iterator operator++(int) = 0;
-
-                /**
-                 * @brief Permits to compare two iterators.
-                 */
-                virtual bool operator==(const iterator& other) const = 0;
-
-                /**
-                 * @brief Permits to compare two iterators.
-                 */
-                virtual bool operator!=(const iterator& other) const = 0;
-        };
-
-        /**
-         * @brief begin() for iterator.
-         */
-        virtual iterator begin() = 0;
         
-        /**
-         * @brief end() for iterator.
-         */
-        virtual iterator end() = 0;
+        // /**
+        //  * @class iterator
+        //  * @brief Defines an iterator for lists.
+        //  */
+        // class iterator {
+        //     public:
+        //         virtual ~iterator() = default;
+
+        //         /**
+        //          * @brief Defines operation *.
+        //          * @return The reference of value at list[i].
+        //          */
+        //         virtual int& operator*() = 0;
+
+        //         /**
+        //          * @brief Defines ++i.
+        //          */
+        //         virtual iterator& operator++() = 0;
+
+        //         /**
+        //          * @brief Defines i++.
+        //          */
+        //         virtual iterator operator++(int) = 0;
+
+        //         /**
+        //          * @brief Permits to compare two iterators.
+        //          */
+        //         virtual bool operator==(const iterator& other) const = 0;
+
+        //         /**
+        //          * @brief Permits to compare two iterators.
+        //          */
+        //         virtual bool operator!=(const iterator& other) const = 0;
+        // };
+
+        // /**
+        //  * @brief begin() for iterator.
+        //  */
+        // virtual iterator begin() = 0;
+        // 
+        // /**
+        //  * @brief end() for iterator.
+        //  */
+        // virtual iterator end() = 0;
 
          /**
          * @brief Inserts a value at a given position.

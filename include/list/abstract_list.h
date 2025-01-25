@@ -39,6 +39,8 @@ class AbstractList : public ListInterface {
         }
 
     public:
+        AbstractList(int size) : size(size) {};
+
         int find(int value) const override {
             for (int i = 0; i < size; ++i) {
                 if (value == operator[](i)) {

@@ -14,7 +14,7 @@ class ArrayList : public AbstractList {
     private:
         int* data; ///< Point to the data array.
         int capacity = 10; ///< Current capacity of this list.
-        int extendRatio = 2; ///< Next capacity after extending.
+        const int extendRatio = 2; ///< Next capacity after extending.
                             
         /**
          * @brief Extends the list to extendRatio times of its capacity.
@@ -36,26 +36,27 @@ class ArrayList : public AbstractList {
 
         void clear() override;
 
+        /**
         class ListIterator : public iterator {
-            private:
+            public:
                 int* current;
 
-            public:
                 ListIterator(int* current);
                 
                 int& operator*() override;
 
-                iterator& operator++() override;
+                ListIterator& operator++() override;
 
-                iterator operator++(int) override;
+                ListIterator operator++(int) override;
 
-                bool operator==(const iterator& other) const override;
+                bool operator==(const ListIterator& other) const override;
 
-                bool operator!=(const iterator& other) const override;
+                bool operator!=(const ListIterator& other) const override;
         };
 
-        iterator begin() override;
+        ListIterator begin() override;
 
-        iterator end() override;
+        ListIterator end() override;
+        **/
 };
 #endif // ARRAY_LIST_H
