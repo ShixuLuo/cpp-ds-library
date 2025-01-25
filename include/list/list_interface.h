@@ -72,50 +72,7 @@ class ListInterface {
          */
         virtual iterator end() = 0;
 
-        /**
-         * @class const_iterator
-         * @brief Const version of iterator.
-         */
-        class const_iterator {
-            public:
-                /**
-                 * @brief Defines operation *.
-                 * @return The reference of value at list[i].
-                 */
-                virtual const int& operator*() const = 0;
-
-                /**
-                 * @brief Defines ++i.
-                 */
-                virtual const_iterator& operator++() = 0;
-
-                /**
-                 * @brief Defines i++.
-                 */
-                virtual const_iterator operator++(int) = 0;
-
-                /**
-                 * @brief Permits to compare two iterators.
-                 */
-                virtual bool operator==(const const_iterator& other) const = 0;
-
-                /**
-                 * @brief Permits to compare two iterators.
-                 */
-                virtual bool operator!=(const const_iterator& other) const = 0;
-        };
-        
-        /**
-         * @brief cbegin() for const_iterator.
-         */
-        virtual const_iterator cbegin() const = 0;
-
-        /**
-         * @brief cend() for const_iterator.
-         */
-        virtual const_iterator cend() const = 0;
-
-        /**
+         /**
          * @brief Inserts a value at a given position.
          *
          * @param index The index to insert.
