@@ -19,7 +19,7 @@ class ArrayList : public AbstractList {
         /**
          * @brief Extends the list to extendRatio times of its capacity.
          */
-        void extend() const;
+        void extend();
 
     public:
         ArrayList(int size);
@@ -29,6 +29,8 @@ class ArrayList : public AbstractList {
         ~ArrayList();
 
         int& operator[](int index) override;
+
+        int& operator[](int index) const override;
 
         void insert(int index, int value) override;
 
