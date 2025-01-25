@@ -1,31 +1,11 @@
 # C++ Data Structures Library
 
 ## Description
-A comprehensive implementation of common data structures in C++ from scratch for self-learning, including:
-- AbstractDataStrcuture
-  - [ ] `insert`
-  - [ ] `remove`
-  - [ ] `find`
-  - [ ] `getSize`
-  - [ ] `isEmpty`
-  - [ ] `clear`
-  - [ ] `traverse`
-- Arrays (ADS)
-  - [x] `set`
-  - [x] `get`
-- Linked lists
-  - [x] `set`
-  - [x] `get`
-  - [x] `push_front`
-  - [x] `push_back`
-  - [x] `pop_front`
-  - [x] `pop_back`
+A comprehensive implementation of common data structures in C++, built
+from scratch for self-learning purposes, including:
 - Lists
-  - [x] `set`
-  - [x] `get`
-  - [x] `getCapacity`
-  - [x] `extend`
-  - [ ] `toVector`
+  - Array-based lists
+  - Linked lists
 - Stacks
 - Queues
 - Hash tables
@@ -37,6 +17,19 @@ A comprehensive implementation of common data structures in C++ from scratch for
 - Written in modern C++ for better readability and performance.
 - Includes detailed comments for learning and practice.
 - Modular design for easy integration and extension.
+
+## Usage
+### Lists
+- Two types of lists are currently implemented: **linked lists** and 
+**array-based lists**.
+- Supported methods include:
+  - `insert`
+  - `remove`
+  - `find`
+  - `getSize`
+  - `isEmpty`
+  - `clear`
+- List elements can be accessed and modified using the operator `[]`.
 
 
 ---
