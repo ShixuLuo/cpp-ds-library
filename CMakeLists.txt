@@ -23,6 +23,7 @@ include_directories(${INCLUDE_DIR} ${TEST_DIR})
 # Add library
 add_library(ds_library STATIC
     ${SRC_DIR}/list/array_list.cpp
+    ${SRC_DIR}/list/linked_list.cpp
 )
 
 # Enable testing
@@ -41,6 +42,7 @@ endmacro()
 
 # Add test executables using the macro
 add_doctest_test(test_array_list ${TEST_DIR}/list/test_array_list.cpp)
+add_doctest_test(test_linked_list ${TEST_DIR}/list/test_linked_list.cpp)
 
 # Output the build type for verification
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
