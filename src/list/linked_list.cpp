@@ -154,3 +154,16 @@ void LinkedList::clear() {
     size = 0;
 }
 
+int LinkedList::pop() {
+    int value = (*this)[0];
+    remove(0);
+    return value;
+}
+
+int LinkedList::peek() const {
+    return (*this)[0];
+}
+
+void LinkedList::push(int value) {
+    insert(0, value);
+}

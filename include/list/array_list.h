@@ -60,5 +60,11 @@ class ArrayList : public AbstractList {
 
         ListIterator end() override;
         **/
+
+        int pop() override;
+
+        int peek() const override;
+
+        void push(int value) override;
 };
 #endif // ARRAY_LIST_H

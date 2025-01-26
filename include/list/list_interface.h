@@ -114,6 +114,25 @@ class ListInterface {
          * @brief Clears the list.
          */
         virtual void clear() = 0;
+
+        /**
+         * @brief Returns the top element and deletes it.
+         *
+         * @return The value at the top.
+         */
+        virtual int pop() = 0;
+
+        /**
+         * @brief Adds a new element to the stack.
+         */
+        virtual void push(int value) = 0;
+
+        /**
+         * @brief Return the top element but keep it.
+         *
+         * @return The value at the top.
+         */
+        virtual int peek() const = 0;
         
 };
 
