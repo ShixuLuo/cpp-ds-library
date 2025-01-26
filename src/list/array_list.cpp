@@ -138,3 +138,24 @@ void ArrayList::clear() {
     data = new int[capacity];
 }
 
+/**
+ * @test
+ * SET {1,2,3,4,5}
+ * INPUT pop() x 5;
+ * INPUT pop();
+ * INPUT push() & peek() x 5;
+ * EXPECT {1,2,3,4,5}
+ */
+int ArrayList::pop() {
+    int value = (*this)[size-1];
+    this->remove(size-1);
+    return value;
+}
+
+int ArrayList::peek() const {
+    return (*this)[size-1];
+}
+
+void ArrayList::push(int value) {
+    this->insert(size, value);
+}

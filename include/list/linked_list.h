@@ -83,5 +83,11 @@ class LinkedList : public AbstractList {
 
         ListIterator end() override;
         **/
+
+        int pop() override;
+
+        int peek() const override;
+        
+        void push(int value) override;
 };
 #endif // LINKED_LIST_H

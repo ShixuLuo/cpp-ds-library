@@ -109,3 +109,20 @@ TEST_CASE("clear()") {
     list->clear();
     CHECK(list->isEmpty() == true);
 }
+
+/**
+ * @brief Tests pop(), push(), peek()
+ */
+TEST_CASE("pop(), push(), peek()") {
+    SUBCASE("Normal") {
+        ListInterface* list = createTestList();
+        for (auto ele : {1,2,3,4,5}) {
+            CHECK(list->pop() == ele);
+        }
+        CHECK_THROWS_AS(list->pop(), std::out_of_range);
+        for (auto ele: {1,2,3,4,5}) {
+            list->push(ele);
+            CHECK(list->peek() == ele);
+        }
+    }
+}
